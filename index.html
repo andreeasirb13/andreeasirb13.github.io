@@ -31,8 +31,8 @@
 
 
     <div class="container">
-        <div class="column">
-            <div class="column__header" id="todo">
+        <div class="column" id="todo">
+            <div class="column__header" >
                 <h1 class="column__headline">To do</h1>
                 <span class="column__number">0</span>
             </div>
@@ -71,17 +71,24 @@
             </div>
             <form id="modalForm" class="modal-form">
                 <div class="modal-body">
-                    <input type="text" class="modal-input" id="taskTitle" placeholder="Title" required />
-                    <textarea id="taskDescription" placeholder="Description"></textarea>
+                    <label class ="form-label" for="taskTitle">Title*</label>
+                    <input type="text" class="modal-input" id="taskTitle" required />
+
+                    <label class ="form-label" for="taskDescription">Description Task</label>
+                    <textarea id="taskDescription" rows="3"></textarea>
+
+                    <label class ="form-label" for="taskDeadline">Deadline</label>
                     <input type="date" id="taskDeadline"/>
-                    <select id="taskStatus">
+
+                    <label class ="form-label" for="taskStatus">Status</label>
+                    <select class="form-control" id="taskStatus">
                         <option value="todo">To do</option>
                         <option value="progress">In progress</option>
                         <option value="done">Done</option>
                     </select>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary btn-close" type="button">Cancel</button>
+                    <button class="btn btn-secondary" type="button">Cancel</button>
                     <button class="btn btn-save" type="submit">Save</button>
                 </div>
             </form>
