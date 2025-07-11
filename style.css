@@ -430,7 +430,7 @@ button.btn-add-task {
 }
 
 
-@media (min-width: 1440px) {
+@media (min-width: 1980px) {
     .container {
         --container-padding: 15rem;
     }
