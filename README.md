@@ -1,7 +1,7 @@
 # andreeasirb13.github.io 
 # Task Manager 
 
-A simple, interactive Kanban-style task management application built with HTML, CSS, and vanilla JavaScript. 
+A simple, interactive Task management application built with HTML, CSS, and vanilla JavaScript. 
 This project allows users to create, edit, delete, duplicate and organize tasks across different stages: To-Do, In Progress, Done.
 Tasks are saved in the browser's local storage for persistence.
 
@@ -16,9 +16,11 @@ Tasks are saved in the browser's local storage for persistence.
 - Persist tasks across page reloads using Local Storage
 - Responsive and straightforward UI
 
+
 ## Demo 
 
 Live demo on: https://andreeasirb13.github.io/
+
 
 ## Usage 
 
