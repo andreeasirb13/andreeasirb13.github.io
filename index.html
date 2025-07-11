@@ -8,20 +8,20 @@
 </head>
 <body>
 
-    <header class="header">
+    <header class="header" role="banner">
         <div class="header__content">
             <h1 class="header__headline">Task Manager</h1>
 
-            <ul class="header__stats">
-                <li class="header__stat">
+            <ul class="header__stats" role="list">
+                <li class="header__stat" role="listitem">
                     <div class="header__stat-label" aria-label="Total Tasks" >Total Tasks</div>
                     <div class="header__stat-value" id="totalTasks">0</div>
                 </li>
-                <li class="header__stat">
+                <li class="header__stat" role="listitem">
                     <div class="header__stat-label" aria-label="Completed Tasks">Done</div>
                     <div class="header__stat-value" id="completedTasks">0</div>
                 </li>
-                <li class="header__stat">
+                <li class="header__stat" role="listitem">
                     <div class="header__stat-label" aria-label="In Progress Tasks" >In progress</div>
                     <div class="header__stat-value" id="inProgressTasks">0</div>
                 </li>
@@ -30,40 +30,35 @@
     </header>
 
 
-    <div class="container">
-        <div class="column" id="todo">
-            <div class="column__header" >
+    <main class="container" role="main" id="maincontent" tabindex="-1">
+        <div class="column" id="todo" aria-labelledby="todo-heading">
+            <div class="column__header">
                 <h1 class="column__headline">To do</h1>
                 <span class="column__number">0</span>
             </div>
-            <div class="add__task">
-                <span class="add__task-text">+ Add task</span>
-            </div>
+            <button class="btn btn-add-task">+ Add task</button>
         </div>
 
-        <div class="column" id="progress">
+        <div class="column" id="progress" aria-labelledby="progress-heading">
             <div class="column__header">
                 <h1 class="column__headline">In progress</h1>
                 <span class="column__number">0</span>
             </div>
-            <div class="add__task">
-                <span class="add__task-text">+ Add task</span>
-            </div>
+            <button class="btn btn-add-task">+ Add task</button>
         </div>
 
-        <div class="column" id="done">
+        <div class="column" id="done" aria-labelledby="done-heading">
             <div class="column__header">
                 <h1 class="column__headline">Completed</h1>
                 <span class="column__number">0</span>
             </div>
-            <div class="add__task">
-                <span class="add__task-text">+ Add task</span>
-            </div>
+            <button class="btn btn-add-task">+ Add task</button>
         </div>
-    </div>
+    </main>
 
-    <div class="fade modal-background show"></div>
-    <div id="modal" class=" fade modal show" role="dialog" aria-modal="true" tabindex="-1">
+    <div class="fade modal-background" role="presentation"></div>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" tabindex="-1">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 class="modal-title">Add / Edit Task</h3>
@@ -72,20 +67,23 @@
             <form id="modalForm" class="modal-form">
                 <div class="modal-body">
                     <label class ="form-label" for="taskTitle">Title*</label>
-                    <input type="text" class="modal-input" id="taskTitle" required />
+                    <input type="text" class="modal-input" id="taskTitle" required aria-required="true" />
 
                     <label class ="form-label" for="taskDescription">Description Task</label>
-                    <textarea id="taskDescription" rows="3"></textarea>
+                    <textarea id="taskDescription" rows="3" aria-describedby="taskDescriptionHelp"></textarea>
+                    <div id="taskDescriptionHelp" class="visually-hidden">Enter a description for the task</div>
 
                     <label class ="form-label" for="taskDeadline">Deadline</label>
-                    <input type="date" id="taskDeadline"/>
+                    <input type="date" id="taskDeadline" aria-describedby="taskDeadlineHelp" />
+                    <div id="taskDeadlineHelp" class="visually-hidden">Select a deadline for the task</div>
 
                     <label class ="form-label" for="taskStatus">Status</label>
-                    <select class="form-control" id="taskStatus">
+                    <select class="form-control" id="taskStatus" aria-describedby="taskStatusHelp">
                         <option value="todo">To do</option>
                         <option value="progress">In progress</option>
                         <option value="done">Done</option>
                     </select>
+                    <div id="taskStatusHelp" class="visually-hidden">Select the status of the task</div>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-cancel" type="button">Cancel</button>
@@ -94,6 +92,7 @@
             </form>
         </div>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
