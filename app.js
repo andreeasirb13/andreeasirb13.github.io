@@ -204,6 +204,11 @@ function openTaskModal(taskManager, task = null) {
     taskManager.elements.modal.style.display = 'block';
     taskManager.elements.modalBackground.classList.add('show');
     taskManager.elements.modalBackground.style.display = 'block';
+
+    const focusableEl = taskManager.elements.modal.querySelectorAll('input, button, select, textarea, a[href]');
+    if (focusableEl.length) {
+        focusableEl[0].focus();
+    }
 }
 
 // Close the Form Modal

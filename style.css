@@ -91,7 +91,7 @@ button.btn {
     }
 
     &:focus {
-        outline: 2px solid var(--secondary-color);
+        outline: 2px solid var(--darker-gray);
         outline-offset: 2px;
     }
 }
@@ -260,6 +260,7 @@ button.btn-add-task {
     height: 100vh;
     background-color: #000;
     z-index: 999;
+    pointer-events: auto;
 }
 
 .show {
@@ -349,7 +350,7 @@ button.btn-add-task {
 .modal-body input:focus,
 .modal-body textarea:focus,
 .modal-body select:focus {
-    border-color: #6366f1;
+    border-color: var(--primary-color);
     box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
     outline: none;
 }
